@@ -1,6 +1,4 @@
-﻿using System.Collections.Generic;
-
-public class Student
+﻿public class Student
 {
     public int Id { get; set; }
     public string Name { get; set; }
@@ -10,7 +8,8 @@ public class Student
         this.Name = name;
     }
 }
-class Bai12
+
+class Bai13
 {
     public static void Main(string[] args)
     {
@@ -29,18 +28,6 @@ class Bai12
         {
             Console.WriteLine("ID: {0} || Name: {1}", j.Id, j.Name);
         }
-
-        Console.Write("\nNhap ten can tim: ");
-        string name = Console.ReadLine();
-
-        int luu = -1;
-        for (int i = 0; i < sv.Count; i++)
-            if (sv[i].Name == name)
-                luu = i;
-        if (luu == -1)
-            Console.WriteLine("Khong co sinh vien trong danh sach");
-        else
-            Console.WriteLine("ID: {0} || Name: {1}", sv[luu].Id, sv[luu].Name);
-
+        Console.WriteLine("\nTong so sinh vien co trong danh sach: {0}", sv.Count);
     }
 }
