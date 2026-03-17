@@ -1,4 +1,4 @@
-﻿class BaiTap2
+﻿class BaiTap3
 {
     public static void Main(string[] args)
     {
@@ -16,11 +16,14 @@
             a.Add(x);
         }
 
-        int Tong = 0;
+        int max = a[0];
 
         foreach (int j in a)
-            Tong = Tong + j;
+        {
+            if (j > max)
+                max = j;
+        }
 
-        Console.WriteLine("Tong = {0}", Tong);
+        Console.WriteLine("So lon nhat: {0}", max);
     }
 }
