@@ -1,29 +1,32 @@
-﻿class BaiTap10
+﻿public class Student
+{
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public Student(int id, string name)
+    {
+        this.Id=id;
+        this.Name=name;
+    }
+}
+
+class Bai11
 {
     public static void Main(string[] args)
     {
         Console.WriteLine("Le Trong Tin - 2415053122342 - 24T3\n");
-        List<int> a = new List<int>();
-        int n;
 
-        Console.Write("Nhap so phan tu: ");
-        n = Convert.ToInt32(Console.ReadLine());
+        List<Student> sv = new List<Student>();
 
-        Console.WriteLine("Nhap gia tri tung phan tu:");
-        for (int i = 0; i < n; i++)
+        sv.Add(new Student(1, "Tin"));
+        sv.Add(new Student(2, "Hai"));
+        sv.Add(new Student(3, "Mlo"));
+        sv.Add(new Student(4, "Hien"));
+        sv.Add(new Student(5, "Tuong"));
+        Console.WriteLine("Danh sach sinh vien:");
+
+        foreach (Student j in sv)
         {
-            int x = int.Parse(Console.ReadLine());
-            a.Add(x);
+            Console.WriteLine("ID: {0} || Name: {1}", j.Id, j.Name);
         }
-
-        int min = a[0];
-
-        foreach (int j in a)
-        {
-            if (j < min)
-                min = j;
-        }
-
-        Console.WriteLine("Phan tu nho nhat la: {0}", min);
     }
 }
