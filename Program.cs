@@ -1,46 +1,36 @@
-﻿using System.Collections.Generic;
-
-public class Student
-{
-    public int Id { get; set; }
-    public string Name { get; set; }
-    public Student(int id, string name)
-    {
-        this.Id = id;
-        this.Name = name;
-    }
-}
-class BaiTap14
+﻿class BaiTap15
 {
     public static void Main(string[] args)
     {
         Console.WriteLine("Le Trong Tin - 2415053122342 - 24T3\n");
 
-        List<Student> sv = new List<Student>();
+        Dictionary<string, string> dict = new Dictionary<string, string>();
 
-        sv.Add(new Student(1, "Tin"));
-        sv.Add(new Student(2, "Hai"));
-        sv.Add(new Student(3, "Mlo"));
-        sv.Add(new Student(4, "Hien"));
-        sv.Add(new Student(5, "Tuong"));
-        Console.WriteLine("Danh sach sinh vien:");
+        dict.Add("hello", "xin chao");
+        dict.Add("cat", "con meo");
+        dict.Add("dog", "con cho");
+        dict.Add("book", "quyen sach");
+        dict.Add("student", "sinh vien");
 
-        foreach (Student j in sv)
+        string tu;
+
+        do
         {
-            Console.WriteLine("ID: {0} || Name: {1}", j.Id, j.Name);
+            Console.Write("\nNhap tu tieng Anh: ");
+            tu = Console.ReadLine().ToLower();
+
+            if (dict.ContainsKey(tu))
+            {
+                Console.WriteLine("Nghia tieng Viet là: {0}", dict[tu]);
+            }
+
         }
-
-        Console.Write("\nNhap ID sinh vien can xoa: ");
-        int id = Convert.ToInt32(Console.ReadLine());
-
-        for (int i = 0; i < sv.Count; i++)
-            if (sv[i].Id == id)
-                sv.Remove(sv[i]);
-
-        Console.WriteLine("Danh sach sinh vien sau khi xoa:");
-        foreach (Student j in sv)
+        while (dict.ContainsKey(tu));
+        Console.WriteLine("Khong tim thay tu nay.");
+        Console.WriteLine("\nDanh sach tu trong tu dien:");
+        foreach (var i in dict)
         {
-            Console.WriteLine("ID: {0} || Name: {1}", j.Id, j.Name);
+            Console.WriteLine(i.Key + " - " + i.Value);
         }
     }
 }
