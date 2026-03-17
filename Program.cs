@@ -1,4 +1,4 @@
-﻿class BaiTap9
+﻿class BaiTap10
 {
     public static void Main(string[] args)
     {
@@ -16,18 +16,14 @@
             a.Add(x);
         }
 
-        List<int> tam = new List<int>();
+        int min = a[0];
+
         foreach (int j in a)
         {
-            if (tam.Contains(j) == false)
-                tam.Add(j);
+            if (j < min)
+                min = j;
         }
 
-
-        Console.WriteLine("Danh sach moi khong chua phan tu trung: ");
-        foreach (int j in tam)
-        {
-            Console.Write("{0} ", j);
-        }
+        Console.WriteLine("Phan tu nho nhat la: {0}", min);
     }
 }
