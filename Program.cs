@@ -1,4 +1,4 @@
-﻿class BaiTap8
+﻿class BaiTap9
 {
     public static void Main(string[] args)
     {
@@ -16,10 +16,16 @@
             a.Add(x);
         }
 
-        a.Reverse();
-
-        Console.WriteLine("Danh sach sau khi dao nguoc thu tu cac phan tu: ");
+        List<int> tam = new List<int>();
         foreach (int j in a)
+        {
+            if (tam.Contains(j) == false)
+                tam.Add(j);
+        }
+
+
+        Console.WriteLine("Danh sach moi khong chua phan tu trung: ");
+        foreach (int j in tam)
         {
             Console.Write("{0} ", j);
         }
