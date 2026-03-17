@@ -1,21 +1,28 @@
-﻿class BaiTap5
+﻿class BaiTap6
 {
     public static void Main(string[] args)
     {
         Console.WriteLine("Le Trong Tin - 2415053122342 - 24T3\n");
-        List<string> sv = new List<string>() {"Tin","Tung","Tu","Hai"};
+        List<string> sv = new List<string>() { "Tin", "Tung", "Tu", "Hai" };
 
         Console.WriteLine("Cac sinh vien co trong danh sach: ");
         foreach (string s in sv)
-            Console.WriteLine(s);
-        Console.WriteLine("---------------------------------------");
-        Console.WriteLine("Nhap ten can xoa: ");
+            Console.Write("{0}, ", s);
+        Console.WriteLine("\n---------------------------------------");
+        Console.WriteLine("Nhap ten can kiem tra: ");
         string name = Console.ReadLine();
 
-        sv.Remove(name);
+        if (sv.Contains(name))
+            Console.WriteLine("Ton tai");
+        else
+            Console.WriteLine("Khong ton tai");
+        Console.WriteLine("\n---------------------------------------");
+        Console.WriteLine("Nhap ten can kiem tra: ");
+        name = Console.ReadLine();
 
-        Console.WriteLine("\nCac sinh vien co trong danh sach sau khi xoa: ");
-        foreach (string s in sv)
-            Console.WriteLine(s);
+        if (sv.Contains(name))
+            Console.WriteLine("Ton tai");
+        else
+            Console.WriteLine("Khong ton tai");
     }
 }
