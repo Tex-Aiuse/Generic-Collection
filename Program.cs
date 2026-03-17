@@ -1,57 +1,50 @@
-﻿class BaiTap17
+﻿public class Student
+{
+    public string Name { get; set; }
+    public double Score { get; set; }
+
+    public Student(string name, double score)
+    {
+        this.Name = name;
+        this.Score = score;
+    }
+}
+
+class BaiTap18
 {
     public static void Main(string[] args)
     {
         Console.WriteLine("Le Trong Tin - 2415053122342 - 24T3\n");
 
-        List<int> a = new List<int>();
-        int n;
+        List<Student> sv = new List<Student>();
 
-        Console.Write("Nhap so phan tu: ");
-        n = Convert.ToInt32(Console.ReadLine());
+        sv.Add(new Student("Tin", 9));  
+        sv.Add(new Student("Hai", 3.2));
+        sv.Add(new Student("Mlo",7.8));
+        sv.Add(new Student("Hien",10));
+        sv.Add(new Student("Tuong",5.9));
+        Console.WriteLine("Danh sach sinh vien:");
 
-        Console.WriteLine("Nhap gia tri tung phan tu:");
-        for (int i = 0; i < n; i++)
+        foreach (Student j in sv)
         {
-            int x = int.Parse(Console.ReadLine());
-            a.Add(x);
+            Console.WriteLine("Name: {0} || Score: {1}", j.Name, j.Score);
         }
 
-        List<int> tam = new List<int>();
-        foreach (int j in a)
+        double max = sv[0].Score;
+
+        foreach (Student s in sv)
         {
-            if (tam.Contains(j) == false)
-                tam.Add(j);
+            if (s.Score > max)
+                max = s.Score;
         }
 
-        int dem = 0;
-        List<int> demsl = new List<int>();
+        Console.WriteLine("\nSinh vien co diem cao nhat:");
 
-        foreach (int j in tam)
+        foreach (Student j in sv)
         {
-            for (int i = 0; i < a.Count; i++)
+            if (j.Score == max)
             {
-                if (a[i] == j)
-                    dem++;
-            }
-
-            demsl.Add(dem);
-            dem = 0;
-        }
-
-        int max = demsl[0];
-        for (int i = 1; i < demsl.Count; i++)
-        {
-            if (demsl[i] > max)
-                max = demsl[i];
-        }
-
-        Console.WriteLine("\nCac so xuat hien nhieu nhat:");
-        for (int i = 0; i < demsl.Count; i++)
-        {
-            if (demsl[i] == max)
-            {
-                Console.WriteLine(tam[i] + " : " + max + " lan");
+                Console.WriteLine("Name: {0} || Score: {1}", j.Name, j.Score);
             }
         }
     }
