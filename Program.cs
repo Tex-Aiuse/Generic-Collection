@@ -1,4 +1,4 @@
-﻿class BaiTap7
+﻿class BaiTap8
 {
     public static void Main(string[] args)
     {
@@ -16,12 +16,12 @@
             a.Add(x);
         }
 
-        a.Sort();
+        a.Reverse();
 
-        Console.WriteLine("Danh sach sau khi sap xep tang dan: ");
+        Console.WriteLine("Danh sach sau khi dao nguoc thu tu cac phan tu: ");
         foreach (int j in a)
         {
-            Console.Write("{0} ",j);
+            Console.Write("{0} ", j);
         }
     }
 }
