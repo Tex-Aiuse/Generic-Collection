@@ -1,4 +1,6 @@
-﻿public class Student
+﻿using System.Collections.Generic;
+
+public class Student
 {
     public int Id { get; set; }
     public string Name { get; set; }
@@ -8,8 +10,7 @@
         this.Name = name;
     }
 }
-
-class Bai13
+class BaiTap14
 {
     public static void Main(string[] args)
     {
@@ -28,6 +29,18 @@ class Bai13
         {
             Console.WriteLine("ID: {0} || Name: {1}", j.Id, j.Name);
         }
-        Console.WriteLine("\nTong so sinh vien co trong danh sach: {0}", sv.Count);
+
+        Console.Write("\nNhap ID sinh vien can xoa: ");
+        int id = Convert.ToInt32(Console.ReadLine());
+
+        for (int i = 0; i < sv.Count; i++)
+            if (sv[i].Id == id)
+                sv.Remove(sv[i]);
+
+        Console.WriteLine("Danh sach sinh vien sau khi xoa:");
+        foreach (Student j in sv)
+        {
+            Console.WriteLine("ID: {0} || Name: {1}", j.Id, j.Name);
+        }
     }
 }
